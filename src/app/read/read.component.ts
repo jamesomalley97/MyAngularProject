@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+import { HomeServiceService } from '../services/home-service.service';
 
 @Component({
   selector: 'app-read',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./read.component.css']
 })
 export class ReadComponent implements OnInit {
+  Homes: any = [];
+  constructor(private homeService: HomeServiceService) { }
 
-  constructor() { }
 
   ngOnInit() {
-  }
-
-}
+    this.homeService.GetHomeInfo().subscribe((data) => {
+      this.Homes = data.homes;
+      console.log(this.Homes);
+    })
+  }}

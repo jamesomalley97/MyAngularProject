@@ -1,1 +1,50 @@
-<p>create works!</p>
+<mat-card>
+    <form (submit)="onAddHomeInfo(homeForm)" #homeForm="ngForm">
+      <mat-form-field>
+          <label> Home </label>
+        <input
+          matInput
+          type="text"
+          name="title"
+          ngModel
+          required
+          #title="ngModel">
+      </mat-form-field>
+      
+      <mat-form-field>
+          <label>Build Year</label>
+        <textarea
+          matInput
+          name="year"
+          ngModel
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+          <label>Picture of home</label>
+        <textarea
+          matInput
+         rows="4"
+          name="poster"
+          ngModel
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+      <!-- <mat-form-field>
+        <input  
+        matInput 
+        name="date" 
+        ngModel
+        [matDatepicker]="picker" 
+        placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        
+      </mat-form-field>  -->
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit">Save Home</button>
+    </form>
+  </mat-card>
+
