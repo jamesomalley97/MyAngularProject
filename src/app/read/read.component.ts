@@ -18,3 +18,5 @@ export class ReadComponent implements OnInit {
       console.log(this.Homes);
     })
   }}
+
+  

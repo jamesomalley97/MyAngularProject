@@ -15,8 +15,8 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddHome(form: NgForm){
-    
+  onAddHomeInfo(form: NgForm){
+
     if(!form.valid)
     {
       return;
