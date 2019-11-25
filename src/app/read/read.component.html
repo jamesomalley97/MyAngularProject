@@ -10,8 +10,7 @@
     </mat-expansion-panel-header>
     <img src="{{home.poster}}">
     <mat-action-row>
-  <button mat-button [routerLink]="['/edit', home._id]" color="primary">EDIT</button>
-    
+    <button mat-button [routerLink]="['/edit', home._id]" color="primary">EDIT</button>
     <button mat-button (click)="onDelete(home._id)" color="warn">DELETE</button>
     </mat-action-row>
     </mat-expansion-panel>

@@ -1,0 +1,37 @@
+<mat-card>
+    <form (submit)="onEditHome(homeForm)" #homeForm="ngForm">
+      <mat-form-field>
+          <label> Home Title</label>
+        <input
+          matInput
+          type="text"
+          name="title"
+          ngModel={{home.title}}
+          required
+          #title="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+          <label>Home Year</label>
+        <textarea
+          matInput
+          name="year"
+          ngModel={{home.year}}
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+          <label>home Poster</label>
+        <textarea
+          matInput
+         rows="4"
+          name="poster"
+          ngModel={{home.poster}}
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit">Edit home</button>
+    </form>
+  </mat-card>
