@@ -1,5 +1,5 @@
 <mat-accordion *ngFor="let home of Homes">
-    <mat-expansion-panel [expanded]="true" *ngIf="home.area=='Ballybane'">
+    <mat-expansion-panel [expanded]="true" *ngIf="home.area=='Ballybane'"> <!-- only displays homes in Ballybane -->
         <mat-expansion-panel-header>
             <mat-panel-title>
                 <h3> {{ home.rentsale }} </h3>

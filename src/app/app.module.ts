@@ -22,10 +22,11 @@ import { CreateComponent } from './create/create.component';
 import {FormsModule} from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
 import { BallybritComponent } from './ballybrit/ballybrit.component';
-import { BallybaneComponent } from './ballybane/ballybane.component';
 import { RenmoreComponent } from './renmore/renmore.component';
 import { SalthillComponent } from './salthill/salthill.component';
 import { NewcastleComponent } from './newcastle/newcastle.component';
+import { SaleComponent } from './sale/sale.component';
+import { RentComponent } from './rent/rent.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,11 @@ import { NewcastleComponent } from './newcastle/newcastle.component';
     CreateComponent,
     EditComponent,
     BallybritComponent,
-    BallybaneComponent,
     RenmoreComponent,
     SalthillComponent,
-    NewcastleComponent
+    NewcastleComponent,
+    SaleComponent,
+    RentComponent
 
   ],
   imports: [

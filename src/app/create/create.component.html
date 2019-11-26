@@ -3,9 +3,9 @@
 
 <mat-card>
     <mat-radio-group [(ngModel)]="rentsale">
-        <mat-radio-button value="For Rent">For Rent</mat-radio-button>
+        <mat-radio-button value="ForRent">For Rent</mat-radio-button>
         <br>
-        <mat-radio-button value="For Sale">For Sale</mat-radio-button>
+        <mat-radio-button value="ForSale">For Sale</mat-radio-button>
     </mat-radio-group>
   <form (submit)="onAddHomeInfo(homeForm)" #homeForm="ngForm">
     <h4>Galway City Area</h4>
@@ -17,6 +17,8 @@
         <mat-option value="Ballybane">Ballybane</mat-option>
         <mat-option value="Renmore">Renmore</mat-option>
         <mat-option value="Ballybrit">ballybrit</mat-option>
+        <mat-option value="Newcastle">Newcastle</mat-option>
+        <mat-option value="Salthill">Salthill</mat-option>
       </mat-select>
     </mat-form-field>
 

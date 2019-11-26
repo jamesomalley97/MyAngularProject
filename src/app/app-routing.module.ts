@@ -8,6 +8,8 @@ import { RenmoreComponent } from './renmore/renmore.component';
 import { NewcastleComponent } from './newcastle/newcastle.component';
 import { SalthillComponent } from './salthill/salthill.component';
 import { BallybritComponent } from './ballybrit/ballybrit.component';
+import { RentComponent } from './rent/rent.component';
+import { SaleComponent } from './sale/sale.component';
 
 
 
@@ -31,6 +33,11 @@ const routes: Routes = [
  },
 
  {
+  path:'edit/:id',
+  component: EditComponent
+},
+
+ {
   path: 'ballybrit',
   component:BallybritComponent
  },
@@ -45,11 +52,15 @@ const routes: Routes = [
   component:NewcastleComponent
  },
 
-
 {
-  path:'edit/:id',
-  component: EditComponent
-}
+  path: 'sale',
+  component:SaleComponent
+ },
+
+ {
+  path: 'rent',
+  component:RentComponent
+ },
 
 
 

@@ -3,11 +3,11 @@ import {Router, ActivatedRoute} from '@angular/router';
 import { HomeServiceService } from '../services/home-service.service';
 
 @Component({
-  selector: 'app-newcastle',
-  templateUrl: './newcastle.component.html',
-  styleUrls: ['./newcastle.component.css']
+  selector: 'app-sale',
+  templateUrl: './sale.component.html',
+  styleUrls: ['./sale.component.css']
 })
-export class NewcastleComponent implements OnInit {
+export class SaleComponent implements OnInit {
 
   Homes: any = [];
   constructor(private homeService: HomeServiceService) { }

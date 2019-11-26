@@ -1,1 +1,22 @@
-<p>salthill works!</p>
+<mat-accordion *ngFor="let home of Homes">
+        <mat-expansion-panel [expanded]="true" *ngIf="home.area=='Salthill'"> <!-- only displays homes in salthill -->
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h3> {{ home.rentsale }} </h3>
+                </mat-panel-title>
+                <mat-panel-title>
+                        <h3>Eircode : </h3>
+                        <h3>{{ home.eircode }}</h3>
+                    </mat-panel-title>
+                <mat-panel-title>
+                    <h3> {{ home.address }} </h3>
+                </mat-panel-title>
+               
+            </mat-expansion-panel-header>
+            <img src="{{home.poster}}">
+            <mat-action-row>
+                <button mat-button [routerLink]="['/edit', home._id]" color="primary">EDIT</button>
+                <button mat-button (click)="onDelete(home._id)" color="warn">DELETE</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
