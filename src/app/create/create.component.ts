@@ -10,29 +10,32 @@ import { HomeServiceService } from '../services/home-service.service';
 })
 export class CreateComponent implements OnInit {
 
+  //data-binding for dropdown menu 
+  //and also check box
+  rentsale:string;
+  area:any;
+
   constructor(private homeService: HomeServiceService) { }
 
   ngOnInit() {
   }
 
   onAddHomeInfo(form: NgForm){
-
-    if(!form.valid)
+    if(!form.valid || this.area==null || this.rentsale==null)
     {
+      form.resetForm();
       return;
     }
+    console.log(this.rentsale)
+    console.log(this.area)
+    console.log(form.value)
+    this.homeService.AddHomeInfo(this.rentsale, this.area,form.value.address,
+       form.value.eircode, form.value.poster).subscribe(
+         ()=>{
 
-    console.log(form.value);
-    
-
-    this.homeService.AddHomeInfo(form.value.title,
-      form.value.year, form.value.poster).subscribe(
-        ()=>{
-
-        }
-      );
-      console.log(form.value);
-      form.resetForm();
+         }
+       );
+    form.resetForm();
   }
 
 }

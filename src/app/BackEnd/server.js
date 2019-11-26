@@ -9,8 +9,10 @@ const mongoDB = "mongodb+srv://jamesomalley:Lecanvey1@cluster0-16fgy.mongodb.net
 mongoose.connect(mongoDB, {useNewUrlParser:true});
 const Schema = mongoose.Schema;
 const homeSchema = new Schema({
-  title:String,
-  year:String,
+  rentsale:String,
+  area:String,
+  address:String,
+  eircode:String,
   poster:String
 });
 const HomeModel = mongoose.model('home',homeSchema);
@@ -44,29 +46,31 @@ app.delete('/api/homes/:id', (req,res) =>{
   })
 })
 
-app.get('/api/homes/search/:title/:criteria', (req,res)=>{
-  console.log(req.params.title);
+app.get('/api/homes/search/:address/:criteria', (req,res)=>{
+  console.log(req.params.address);
   console.log(req.params.criteria);
-if(req.params.criteria == 'title')
+if(req.params.criteria == 'address')
   {
-  HomeModel.find({ 'title': req.params.title},
+  HomeModel.find({ 'address': req.params.address},
 (error,data) =>{
   res.json(data);
 })
   }
 })
 
-
 app.post('/api/homes', (req,res) =>{
 console.log('post Sucessfull');
 console.log(req.body)
-console.log(req.body.title);
-console.log(req.body.year);
+console.log(req.body.rentsale);
+console.log(req.body.address);
+console.log(req.body.eircode);
 console.log(req.body.poster);
 
 HomeModel.create({
-  title: req.body.title,
-  year: req.body.year,
+  rentsale:req.body.rentsale,
+  area: req.body.area,
+  address: req.body.address,
+  eircode: req.body.eircode,
   poster: req.body.poster
 });
 res.json('data uploaded')
@@ -90,11 +94,9 @@ app.put('/api/homes/:id', (req, res)=>{
 
 app.delete('/api/homes/:id', (req,res) =>{
   console.log(req.params.id);
-
   HomeModel.deleteOne({_id:req.params.id},(error,data)=>{
     if(error)
-      res.json(error);
-      
+      res.json(error);  
     res.json(data);
   })
 })

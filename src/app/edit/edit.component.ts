@@ -23,9 +23,7 @@ export class EditComponent implements OnInit {
       );
     }
     onEditHome(form:NgForm){
-      console.log(form.value.title);
-      this.homeService.UpdateHome(this.home._id, form.value.title,
-        form.value.year, form.value.poster).subscribe();
-        this.ngOnInit();
+      // this.homeService.UpdateHome(this.home._id, form.value.title,
+      //   form.value.year, form.value.poster).subscribe();
     }
   }

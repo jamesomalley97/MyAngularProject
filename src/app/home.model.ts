@@ -1,5 +1,7 @@
    export interface Home {
-        title: string;
-        year: string;
+        rentsale:string;
+        area:string;
+        address: string;
+        eircode: string;
         poster: string;
       }

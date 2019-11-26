@@ -1,36 +1,40 @@
+<br>
+<br>
+
 <mat-card>
-    <form (submit)="onAddHomeInfo(homeForm)" #homeForm="ngForm">
-      <mat-form-field>
-          <label> Home </label>
-        <input
-          matInput
-          type="text"
-          name="title"
-          ngModel
-          required
-          #title="ngModel">
-      </mat-form-field>
-      
-      <mat-form-field>
-          <label>Build Year</label>
-        <textarea
-          matInput
-          name="year"
-          ngModel
-          required
-          #content="ngModel"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-          <label>Picture of home</label>
-        <textarea
-          matInput
-         rows="4"
-          name="poster"
-          ngModel
-          required
-          #content="ngModel"></textarea>
-      </mat-form-field>
-      <!-- <mat-form-field>
+    <mat-radio-group [(ngModel)]="rentsale">
+        <mat-radio-button value="For Rent">For Rent</mat-radio-button>
+        <br>
+        <mat-radio-button value="For Sale">For Sale</mat-radio-button>
+    </mat-radio-group>
+  <form (submit)="onAddHomeInfo(homeForm)" #homeForm="ngForm">
+    <h4>Galway City Area</h4>
+   
+
+    <mat-form-field>
+      <mat-label>Select an option</mat-label>
+      <mat-select [(value)]="area">
+        <mat-option value="Ballybane">Ballybane</mat-option>
+        <mat-option value="Renmore">Renmore</mat-option>
+        <mat-option value="Ballybrit">ballybrit</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  
+    <mat-form-field>
+      <label> Address </label>
+      <input matInput type="text" name="address" ngModel required #title="ngModel">
+    </mat-form-field>
+
+    <mat-form-field>
+      <label>Eircode</label>
+      <textarea matInput name="eircode" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <label>Picture of home</label>
+      <textarea matInput rows="4" name="poster" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
+    <!-- <mat-form-field>
         <input  
         matInput 
         name="date" 
@@ -41,10 +45,6 @@
         <mat-datepicker #picker></mat-datepicker>
         
       </mat-form-field>  -->
-      <button
-        mat-raised-button
-        color="accent"
-        type="submit">Save Home</button>
-    </form>
-  </mat-card>
-
+    <button mat-raised-button color="accent" type="submit">Save Home</button>
+  </form>
+</mat-card>
