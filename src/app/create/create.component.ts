@@ -40,7 +40,9 @@ export class CreateComponent implements OnInit {
       form.value.name, 
       form.value.email,
       form.value.number, 
-      form.value.cost).subscribe(
+      form.value.cost,
+      form.value.description,
+      form.value.houseimage).subscribe(
         (data) => {
           console.log(data);
         }

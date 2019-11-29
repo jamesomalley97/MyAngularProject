@@ -22,6 +22,8 @@ const homeSchema = new Schema({
   email: String,
   number: String,
   cost: String,
+  description: String,
+  houseimage: String,
 
 });
 const HomeModel = mongoose.model('home',homeSchema);
@@ -88,14 +90,12 @@ HomeModel.create({
   email: req.body.email,
   number: req.body.number,
   cost: req.body.cost,
+  houseimage: req.body.houseimage,
+  description: req.body.description
 });
 //adapted from:https://stackoverflow.com/questions/26066785/proper-way-to-set-response-status-and-json-content-in-a-rest-api-made-with-nodej
 //send back proper response??
-if(err)
-{
-  res.status(500).json({ Status: "server error"});
-}
-res.status(200).json({ Status: "user created"});
+res.status(200).json({ Status: "Home stored in database"});
 })
 
 app.get('/api/homes/:id',(req,res)=>{

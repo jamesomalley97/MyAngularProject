@@ -7,4 +7,7 @@
         email: string;
         number: string;
         cost: string;
+        description:string;
+        houseimage:string;
+
       }

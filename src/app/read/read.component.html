@@ -6,34 +6,38 @@
         <!-- only displays homes in Ballybane -->
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <h3> {{ home.rentsale }} </h3>
+                <h3> Available {{ home.rentsale }} </h3>
             </mat-panel-title>
             <mat-panel-title>
-                <h3>Eircode : </h3>
-                <h3>{{ home.eircode }}</h3>
+               
+                <h3>Eircode :  {{ home.eircode }}</h3>
             </mat-panel-title>
             <mat-panel-title>
-                <h3> {{ home.address }} </h3>
+        
+                <h3> Address : {{ home.address }} </h3>
             </mat-panel-title>
-            <mat-panel-title>
-                <h3> {{ home.name }} </h3>
-            </mat-panel-title>
-            <mat-panel-title>
-                <h3> {{ home.email }} </h3>
-            </mat-panel-title>
-            <mat-panel-title>
-                <h3> {{ home.number }} </h3>
-            </mat-panel-title>
-            <mat-panel-title>
-                <h3> {{ home.cost }} </h3>
-            </mat-panel-title>
+        
 
         </mat-expansion-panel-header>
         <!-- <img src="{{home.poster}}">  -->
+        <p>Contact details:</p>
+        <h4> <b>Contact No:</b>{{ home.number }} </h4>
+        <br>
+        <h4> <b>Name: </b>{{ home.name }} </h4>
+        <br>
+        <h4> <b>E-mail: </b>:{{ home.email }} </h4>
+        <br>
+        <h4> <b>Price Per Month / Price for sale: </b> {{ home.cost }} </h4>
+        <br>
+        <div id="centerImage">
+        
+        <img src="{{home.houseimage}}">
+        </div>
         <mat-action-row>
             <button mat-button [routerLink]="['/edit', home._id]" color="primary">EDIT</button>
             <button mat-button (click)="onDelete(home._id)" color="warn">DELETE</button>
         </mat-action-row> 
 
     </mat-expansion-panel>
+  
 </mat-accordion>
