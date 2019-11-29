@@ -1,34 +1,95 @@
+<mat-radio-group [(ngModel)]="rentsale">
+
+    <mat-label> <b><u> Select whether property is for Sale of Rent</u> </b> </mat-label>
+  
+    <br>
+    <br>
+    <mat-radio-button value="ForRent">For Rent</mat-radio-button>
+    <br>
+    <br>
+    <mat-radio-button value="ForSale">For Sale</mat-radio-button>
+</mat-radio-group> 
+
 <mat-card>
     <form (submit)="onEditHome(homeForm)" #homeForm="ngForm">
+
+        <h4>Galway City Area</h4>
+   
+
+        <mat-form-field>
+          <mat-label>Select an option</mat-label>
+          <mat-select [(value)]="area">
+            <mat-option value="Ballybane">Ballybane</mat-option>
+            <mat-option value="Renmore">Renmore</mat-option>
+            <mat-option value="Ballybrit">ballybrit</mat-option>
+            <mat-option value="Newcastle">Newcastle</mat-option>
+            <mat-option value="Salthill">Salthill</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
       <mat-form-field>
-          <label> Home Title</label>
+          <label> Address </label>
         <input
           matInput
           type="text"
-          name="title"
-          ngModel={{home.title}}
+          name="address"
+          ngModel={{home.address}}
           required
           #title="ngModel">
       </mat-form-field>
       <mat-form-field>
-          <label>Home Year</label>
+          <label> Eircode</label>
         <textarea
           matInput
-          name="year"
-          ngModel={{home.year}}
+          name="eircode"
+          ngModel={{home.eircode}}
           required
           #content="ngModel"></textarea>
       </mat-form-field>
       <mat-form-field>
-          <label>home Poster</label>
+          <label>Contact Number</label>
         <textarea
           matInput
          rows="4"
-          name="poster"
-          ngModel={{home.poster}}
+          name="number"
+          ngModel={{home.number}}
           required
           #content="ngModel"></textarea>
       </mat-form-field>
+
+      <mat-form-field>
+          <label> Name </label>
+        <textarea
+          matInput
+         rows="4"
+          name="name"
+          ngModel={{home.name}}
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+          <label> Email </label>
+        <textarea
+          matInput
+         rows="4"
+          name="email"
+          ngModel={{home.email}}
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+          <label> Cost </label>
+        <textarea
+          matInput
+         rows="4"
+          name="cost"
+          ngModel={{home.cost}}
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+
       <button
         mat-raised-button
         color="accent"

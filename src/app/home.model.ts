@@ -3,5 +3,8 @@
         area:string;
         address: string;
         eircode: string;
-        poster: string;
+        name: string;
+        email: string;
+        number: string;
+        cost: string;
       }

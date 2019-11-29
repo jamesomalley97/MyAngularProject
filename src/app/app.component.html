@@ -1,20 +1,68 @@
-<mat-toolbar color="primary"> 
-  <mat-toolbar-row>
-          <span class="title-center">
-     Galway Houses For Rent And Sale
-  </span>
-    </mat-toolbar-row>
-    <mat-toolbar-row>
-<button mat-button [routerLink]="['/create']" color="Warn">Add Home</button>
-<button mat-button [routerLink]="['/read']">Ballybane</button>
-<button mat-button [routerLink]="['/ballybrit']">Ballybrit</button>
-<button mat-button [routerLink]="['/renmore']">Renmore</button>
-<button mat-button [routerLink]="['/salthill']">Salthill</button>
-<button mat-button [routerLink]="['/newcastle']">Newcastle</button>
-<button mat-button [routerLink]="['/sale']">Houses for Sale</button>
-<button mat-button [routerLink]="['/rent']">Houses for Rent</button>
-</mat-toolbar-row>
-</mat-toolbar>
+<!-- <mat-toolbar color="primary" class="navbar">
+  <div>
+    Galway Houses For Rent And Sale
+  </div>
+
+  <div>
+    <span> <button  mat-raised-button [routerLink]="['/create']" color="warn">Add Home</button> </span>
+    <span> <button mat-raised-button [routerLink]="['/read']" color="accent">Ballybane</button> </span>
+    <span> <button mat-raised-button [routerLink]="['/ballybrit']" color="accent">Ballybrit</button></span>
+    <span> <button mat-raised-button [routerLink]="['/renmore']" color="accent">Renmore</button></span>
+    <span> <button mat-raised-button [routerLink]="['/salthill']" color="accent">Salthill</button></span>
+    <span> <button mat-raised-button [routerLink]="['/newcastle']" color="accent">Newcastle</button></span>
+    <span> <button mat-raised-button [routerLink]="['/sale']" color="accent">Houses for Sale</button></span>
+    <span> <button mat-raised-button [routerLink]="['/rent']" color="accent">Houses for Rent</button></span>
+  </div>
+
+</mat-toolbar> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark indigo">
+  <a class="navbar-brand" href="#">
+    <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="mdb logo">
+  </a>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+
+        <a class="nav-link" [routerLink]="['/create']">Add Home
+          <span class="sr-only">(current)</span>
+        </a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/read']">Ballybane</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/ballybrit']">Ballybrit</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/renmore']" >Renmore</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/salthill']" >Salthill</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/newcastle']">Newcastle</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/rent']">For Rent</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/sale']">For Sale</a>
+      </li>
+    </ul>
+    <span class="navbar-text white-text">
+    Galway Houses for Rent and Sale
+    </span>
+  </div>
+</nav>
 
 
 

@@ -10,6 +10,8 @@ import {HomeServiceService} from '../services/home-service.service'
 })
 export class EditComponent implements OnInit {
   home:any=[];
+  rentsale: string;
+  area: any;
     constructor(private homeService:HomeServiceService, private router:Router,
       private route:ActivatedRoute) { }
   
@@ -18,12 +20,21 @@ export class EditComponent implements OnInit {
       this.homeService.GetHome(this.route.snapshot.params['id']).subscribe(
         (data) =>{
             this.home = data;
-            console.log(this.home);       
+            console.log(this.home);
+            this.rentsale = data.rentsale;
+            this.area=data.area;       
         }
       );
     }
     onEditHome(form:NgForm){
-      // this.homeService.UpdateHome(this.home._id, form.value.title,
-      //   form.value.year, form.value.poster).subscribe();
+      if (!form.valid || this.area == null || this.rentsale == null) {//checking area and rentsale as I has to put these outside of the form to get them to work
+        form.resetForm();
+        alert("House editing Failed, all fields must be filled");  // alerts users to fill in the form fully by displaying an alert message
+        return;
+      }
+      this.homeService.UpdateHome(this.home._id, this.rentsale, this.area, form.value.address,
+      form.value.eircode,form.value.name,form.value.email,form.value.number,form.value.cost ).subscribe();
+      alert("Succesfully edited Home")
     }
   }
+

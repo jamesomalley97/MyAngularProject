@@ -1,5 +1,9 @@
 // server.js
 const express = require('express');
+// upload images to DB
+//const multer = require('multer-gridfs-storage');
+//const upload = multer({dest:'uploads/'});
+//
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = 4000;
@@ -13,7 +17,12 @@ const homeSchema = new Schema({
   area:String,
   address:String,
   eircode:String,
-  poster:String
+  poster:String,
+  name: String,
+  email: String,
+  number: String,
+  cost: String,
+
 });
 const HomeModel = mongoose.model('home',homeSchema);
 app.use(cors());
@@ -57,23 +66,36 @@ if(req.params.criteria == 'address')
 })
   }
 })
-
-app.post('/api/homes', (req,res) =>{
-console.log('post Sucessfull');
-console.log(req.body)
-console.log(req.body.rentsale);
-console.log(req.body.address);
-console.log(req.body.eircode);
-console.log(req.body.poster);
+//upload.single('houseImage')
+app.post('/api/homes',  (req,res) =>{
+//   console.log(req.file); // uploading image
+// console.log('post Sucessfull');
+// console.log(req.body)
+// console.log(req.body.rentsale);
+// console.log(req.body.address);
+// console.log(req.body.eircode);
+// console.log(req.body.name);
+// console.log(req.body.email);
+// console.log(req.body.number);
+// console.log(req.body.cost);
 
 HomeModel.create({
   rentsale:req.body.rentsale,
   area: req.body.area,
   address: req.body.address,
   eircode: req.body.eircode,
-  poster: req.body.poster
+  name: req.body.name,
+  email: req.body.email,
+  number: req.body.number,
+  cost: req.body.cost,
 });
-res.json('data uploaded')
+//adapted from:https://stackoverflow.com/questions/26066785/proper-way-to-set-response-status-and-json-content-in-a-rest-api-made-with-nodej
+//send back proper response??
+if(err)
+{
+  res.status(500).json({ Status: "server error"});
+}
+res.status(200).json({ Status: "user created"});
 })
 
 app.get('/api/homes/:id',(req,res)=>{

@@ -1,19 +1,36 @@
+<div class="jumbotron card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+  <div class="text-white text-center py-5 px-4">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Welcome to my Angular Application</strong></h2>
+      <p class="mx-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
+        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui, dolorum!
+      </p>
+      <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> View project</a>
+    </div>
+  </div>
+</div>
 <br>
 <br>
 
-<mat-card>
+<mat-card id="card" style="text-align: center;">
     <mat-radio-group [(ngModel)]="rentsale">
-        <mat-radio-button value="ForRent">For Rent</mat-radio-button>
+
+        <mat-label> <b><u> Select whether property is for Sale or Rent</u> </b> </mat-label>
+      
         <br>
-        <mat-radio-button value="ForSale">For Sale</mat-radio-button>
+        <br>
+        <mat-radio-button value="For Rent">For Rent</mat-radio-button>
+        <br>
+        <br>
+        <mat-radio-button value="For Sale">For Sale</mat-radio-button>
     </mat-radio-group>
   <form (submit)="onAddHomeInfo(homeForm)" #homeForm="ngForm">
-    <h4>Galway City Area</h4>
-   
+    
+  <br>
 
     <mat-form-field>
-      <mat-label>Select an option</mat-label>
-      <mat-select [(value)]="area">
+      <mat-label>Select Area</mat-label>
+      <mat-select [(value)]="area" required>
         <mat-option value="Ballybane">Ballybane</mat-option>
         <mat-option value="Renmore">Renmore</mat-option>
         <mat-option value="Ballybrit">ballybrit</mat-option>
@@ -23,30 +40,43 @@
     </mat-form-field>
 
   
-    <mat-form-field>
-      <label> Address </label>
+    <mat-form-field >
+      <mat-label> Address </mat-label>
       <input matInput type="text" name="address" ngModel required #title="ngModel">
     </mat-form-field>
 
     <mat-form-field>
-      <label>Eircode</label>
+      <mat-label>Eircode</mat-label>
       <textarea matInput name="eircode" ngModel required #content="ngModel"></textarea>
     </mat-form-field>
+
     <mat-form-field>
-      <label>Picture of home</label>
-      <textarea matInput rows="4" name="poster" ngModel required #content="ngModel"></textarea>
-    </mat-form-field>
-    <!-- <mat-form-field>
-        <input  
-        matInput 
-        name="date" 
-        ngModel
-        [matDatepicker]="picker" 
-        placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-        
-      </mat-form-field>  -->
-    <button mat-raised-button color="accent" type="submit">Save Home</button>
+        <mat-label>Rent Per Month / Price of House </mat-label>
+        <textarea matInput name="cost" ngModel required #content="ngModel"></textarea>
+      
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Email</mat-label>
+          
+          <textarea matInput name="email" ngModel required #content="ngModel"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Number</mat-label>
+            <textarea matInput name="number" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+
+          <mat-form-field>
+              <mat-label>Name</mat-label>
+              <textarea matInput name="name" ngModel required #content="ngModel"></textarea>
+            </mat-form-field>
+
+           
+    
+
+ 
+    <button mat-raised-button color="warn" type="submit">Save Home</button>
   </form>
-</mat-card>
+</mat-card>   
+
