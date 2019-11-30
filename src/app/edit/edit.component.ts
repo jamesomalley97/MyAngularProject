@@ -32,8 +32,8 @@ export class EditComponent implements OnInit {
         alert("House editing Failed, all fields must be filled");  // alerts users to fill in the form fully by displaying an alert message
         return;
       }
-      // this.homeService.UpdateHome(this.home._id, this.rentsale, this.area, form.value.address,
-      // form.value.eircode,form.value.name,form.value.email,form.value.number,form.value.cost ).subscribe();
+       this.homeService.UpdateHome(this.home._id, this.rentsale, this.area, form.value.address,
+      form.value.eircode,form.value.name,form.value.email,form.value.number,form.value.cost, form.value.description, form.value.houseimage ).subscribe();
       alert("Succesfully edited Home")
     }
   }
