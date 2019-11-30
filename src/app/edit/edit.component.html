@@ -147,43 +147,43 @@
     
           <mat-form-field>
             <mat-label> Address </mat-label>
-            <input matInput type="text" name="address" ngModel required #title="ngModel">
+            <input matInput type="text" name="address" ngModel={{home.address}} required #title="ngModel">
           </mat-form-field>
     
           <mat-form-field>
             <mat-label>Eircode</mat-label>
-            <textarea matInput name="eircode" ngModel required #content="ngModel"></textarea>
+            <textarea matInput name="eircode" ngModel={{home.eircode}} required #content="ngModel"></textarea>
           </mat-form-field>
     
           <mat-form-field>
             <mat-label>Rent Per Month / Price of House </mat-label>
-            <textarea matInput name="cost" ngModel required #content="ngModel"></textarea>
+            <textarea matInput name="cost" ngModel={{home.cost}} required #content="ngModel"></textarea>
           </mat-form-field>
     
           <mat-form-field>
             <mat-label>Email</mat-label>
     
-            <textarea matInput name="email" ngModel required #content="ngModel"></textarea>
+            <textarea matInput name="email" ngModel={{home.email}} required #content="ngModel"></textarea>
           </mat-form-field>
     
           <mat-form-field>
             <mat-label>Number</mat-label>
-            <textarea matInput name="number" ngModel required #content="ngModel"></textarea>
+            <textarea matInput name="number"   ngModel={{home.number}} required #content="ngModel"></textarea>
           </mat-form-field>
     
           <mat-form-field>
             <mat-label>Name</mat-label>
-            <textarea matInput name="name" ngModel required #content="ngModel"></textarea>
+            <textarea matInput name="name" ngModel={{home.name}} required #content="ngModel"></textarea>
           </mat-form-field>
     
           <mat-form-field>
             <label>Picture of house</label>
-            <textarea matInput rows="4" name="houseimage" ngModel required #content="ngModel"></textarea>
+            <textarea matInput rows="4" name="houseimage" ngModel={{home.houseimage}}  required #content="ngModel"></textarea>
           </mat-form-field>
     
           <mat-form-field>
             <label>House Description</label>
-            <textarea matInput rows="4" name="description" ngModel required #content="ngModel"></textarea>
+            <textarea matInput rows="4" name="description" ngModel={{home.description}}  required #content="ngModel"></textarea>
           </mat-form-field>
     
           <button mat-raised-button color="accent" type="submit">Edit home</button>
