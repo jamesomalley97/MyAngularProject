@@ -86,10 +86,10 @@ HomeModel.create({
   area: req.body.area,
   address: req.body.address,
   eircode: req.body.eircode,
-  name: req.body.name,
-  email: req.body.email,
   number: req.body.number,
+  name: req.body.name,
   cost: req.body.cost,
+  email: req.body.email,
   houseimage: req.body.houseimage,
   description: req.body.description
 });

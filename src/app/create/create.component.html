@@ -1,9 +1,12 @@
-<div class="jumbotron card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+<div class="jumbotron card card-image"
+  style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
   <div class="text-white text-center py-5 px-4">
     <div>
       <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Welcome to my Angular Application</strong></h2>
-      <p class="mx-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui, dolorum!
+      <p class="mx-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+        voluptatem,
+        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui,
+        dolorum!
       </p>
       <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> View project</a>
     </div>
@@ -13,20 +16,20 @@
 <br>
 
 <mat-card id="card" style="text-align: center;">
-    <mat-radio-group [(ngModel)]="rentsale">
+  <mat-radio-group [(ngModel)]="rentsale">
 
-        <mat-label> <b><u> Select whether property is for Sale or Rent</u> </b> </mat-label>
-      
-        <br>
-        <br>
-        <mat-radio-button value="For Rent">For Rent</mat-radio-button>
-        <br>
-        <br>
-        <mat-radio-button value="For Sale">For Sale</mat-radio-button>
-    </mat-radio-group>
+    <mat-label> <b><u> Select whether property is for Sale or Rent</u> </b> </mat-label>
+    <br>
+    <br>
+    <mat-radio-button value="For Rent">For Rent</mat-radio-button>
+    <br>
+    <br>
+    <mat-radio-button value="For Sale">For Sale</mat-radio-button>
+  </mat-radio-group>
+
   <form (submit)="onAddHomeInfo(homeForm)" #homeForm="ngForm">
-    
-  <br>
+
+    <br>
 
     <mat-form-field>
       <mat-label>Select Area</mat-label>
@@ -39,8 +42,8 @@
       </mat-select>
     </mat-form-field>
 
-  
-    <mat-form-field >
+
+    <mat-form-field>
       <mat-label> Address </mat-label>
       <input matInput type="text" name="address" ngModel required #title="ngModel">
     </mat-form-field>
@@ -51,54 +54,40 @@
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>Rent Per Month / Price of House </mat-label>
-        <textarea matInput name="cost" ngModel required #content="ngModel"></textarea>
-      
-      </mat-form-field>
+      <mat-label>Rent Per Month / Price of House </mat-label>
+      <textarea matInput name="cost" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
 
-      <mat-form-field>
-          <mat-label>Email</mat-label>
-          
-          <textarea matInput name="email" ngModel required #content="ngModel"></textarea>
-        </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
 
-        <mat-form-field>
-            <mat-label>Number</mat-label>
-            <textarea matInput name="number" ngModel required #content="ngModel"></textarea>
-          </mat-form-field>
+      <textarea matInput name="email" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
 
-          <mat-form-field>
-              <mat-label>Name</mat-label>
-              <textarea matInput name="name" ngModel required #content="ngModel"></textarea>
-            </mat-form-field>
+    <mat-form-field>
+      <mat-label>Number</mat-label>
+      <textarea matInput name="number" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
 
-            <mat-form-field>
-                <label>Picture of house</label>
-              <textarea
-                matInput
-               rows="4"
-                name="houseimage"
-                ngModel
-                required
-                #content="ngModel"></textarea>
-            </mat-form-field>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <textarea matInput name="name" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
 
-            <mat-form-field>
-                <label>House Description</label>
-              <textarea
-                matInput
-               rows="4"
-                name="description"
-                ngModel
-                required
-                #content="ngModel"></textarea>
-            </mat-form-field>
+    <mat-form-field>
+      <label>Picture of house</label>
+      <textarea matInput rows="4" name="houseimage" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
 
-           
-    
+    <mat-form-field>
+      <label>House Description</label>
+      <textarea matInput rows="4" name="description" ngModel required #content="ngModel"></textarea>
+    </mat-form-field>
 
- 
+
+
+
+
     <button mat-raised-button color="warn" type="submit">Save Home</button>
   </form>
-</mat-card>   
-
+</mat-card>

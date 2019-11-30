@@ -1,7 +1,24 @@
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<mat-card id="card" style="text-align: center;">
 <mat-radio-group [(ngModel)]="rentsale">
 
     <mat-label> <b><u> Select whether property is for Sale of Rent</u> </b> </mat-label>
-  
     <br>
     <br>
     <mat-radio-button value="For Rent">For Rent</mat-radio-button>
@@ -10,15 +27,17 @@
     <mat-radio-button value="For Sale">For Sale</mat-radio-button>
 </mat-radio-group> 
 
+<br>
+
 <mat-card>
     <form (submit)="onEditHome(homeForm)" #homeForm="ngForm">
 
-        <h4>Galway City Area</h4>
+   <br>
    
 
         <mat-form-field>
-          <mat-label>Select an option</mat-label>
-          <mat-select [(value)]="area">
+          <mat-label>Select Area</mat-label>
+          <mat-select [(value)]="area" required>
             <mat-option value="Ballybane">Ballybane</mat-option>
             <mat-option value="Renmore">Renmore</mat-option>
             <mat-option value="Ballybrit">ballybrit</mat-option>
@@ -95,4 +114,78 @@
         color="accent"
         type="submit">Edit home</button>
     </form>
-  </mat-card>
+  </mat-card> -->
+
+  <mat-card id="card" style="text-align: center;">
+      <mat-radio-group [(ngModel)]="rentsale">
+    
+        <mat-label> <b><u> Select whether property is for Sale or Rent</u> </b> </mat-label>
+        <br>
+        <br>
+        <mat-radio-button value="For Rent">For Rent</mat-radio-button>
+        <br>
+        <br>
+        <mat-radio-button value="For Sale">For Sale</mat-radio-button>
+      </mat-radio-group>
+      <br>
+    
+      <mat-card>
+        <form (submit)="onEditHome(homeForm)" #homeForm="ngForm">
+    
+          <br>
+    
+          <mat-form-field>
+            <mat-label>Select Area</mat-label>
+            <mat-select [(value)]="area" required>
+              <mat-option value="Ballybane">Ballybane</mat-option>
+              <mat-option value="Renmore">Renmore</mat-option>
+              <mat-option value="Ballybrit">ballybrit</mat-option>
+              <mat-option value="Newcastle">Newcastle</mat-option>
+              <mat-option value="Salthill">Salthill</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label> Address </mat-label>
+            <input matInput type="text" name="address" ngModel required #title="ngModel">
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label>Eircode</mat-label>
+            <textarea matInput name="eircode" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label>Rent Per Month / Price of House </mat-label>
+            <textarea matInput name="cost" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+    
+            <textarea matInput name="email" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label>Number</mat-label>
+            <textarea matInput name="number" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <textarea matInput name="name" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <label>Picture of house</label>
+            <textarea matInput rows="4" name="houseimage" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <label>House Description</label>
+            <textarea matInput rows="4" name="description" ngModel required #content="ngModel"></textarea>
+          </mat-form-field>
+    
+          <button mat-raised-button color="accent" type="submit">Edit home</button>
+        </form>
+      </mat-card>
