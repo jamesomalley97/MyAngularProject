@@ -29,6 +29,8 @@ import { NewcastleComponent } from './newcastle/newcastle.component';
 import { SaleComponent } from './sale/sale.component';
 import { RentComponent } from './rent/rent.component';
 import {MatSliderModule} from '@angular/material/slider';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AllhomesComponent } from './allhomes/allhomes.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import {MatSliderModule} from '@angular/material/slider';
     SalthillComponent,
     NewcastleComponent,
     SaleComponent,
-    RentComponent
+    RentComponent,
+    HomepageComponent,
+    AllhomesComponent
 
   ],
   imports: [

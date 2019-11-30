@@ -2,7 +2,7 @@
   style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
   <div class="text-white text-center py-5 px-4">
     <div>
-      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong> Homes Available in Newcastle for Rent and Sale </strong></h2>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong> All Homes Available for Rent and Sale in Galway City </strong></h2>
      
       
     </div>
@@ -11,7 +11,7 @@
 <br>
 <br>
 <mat-accordion *ngFor="let home of Homes">
-        <mat-expansion-panel [expanded]="true" *ngIf="home.area=='Newcastle'"> <!-- only displays homes in Newcastle -->
+        <mat-expansion-panel [expanded]="true"> <!--  displays all homes in Galway city -->
             <mat-expansion-panel-header>
                     <mat-panel-title>
                         <h4> Available {{ home.rentsale }} </h4>

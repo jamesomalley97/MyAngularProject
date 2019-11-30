@@ -10,6 +10,8 @@ import { SalthillComponent } from './salthill/salthill.component';
 import { BallybritComponent } from './ballybrit/ballybrit.component';
 import { RentComponent } from './rent/rent.component';
 import { SaleComponent } from './sale/sale.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import {AllhomesComponent} from './allhomes/allhomes.component';
 
 
 
@@ -17,6 +19,10 @@ import { SaleComponent } from './sale/sale.component';
 
 
 const routes: Routes = [
+  {
+    path: 'homepage',
+    component:HomepageComponent
+  },
 {
   path: 'read',
   component:ReadComponent
@@ -25,7 +31,7 @@ const routes: Routes = [
 {
  path: 'create',
  component:CreateComponent
-},
+}, 
 
 {
   path: 'renmore',
@@ -60,6 +66,11 @@ const routes: Routes = [
  {
   path: 'rent',
   component:RentComponent
+ },
+
+ {
+  path: 'allhomes',
+  component:AllhomesComponent
  },
 
 

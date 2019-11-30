@@ -16,9 +16,9 @@
 
 </mat-toolbar> -->
 
-<nav class="navbar navbar-expand-lg navbar-dark indigo">
+<nav class="navbar navbar-expand-lg navbar-dark light-blue">
   <a class="navbar-brand" href="#">
-    <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="mdb logo">
+    <img src="assets/webapplogo.svg" height="100" alt="mdb logo">
   </a>
 
 
@@ -28,13 +28,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-
-        <a class="nav-link" [routerLink]="['/create']">Add Home
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/homepage']"> Home Page
           <span class="sr-only">(current)</span>
         </a>
-
       </li>
+
+      <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/create']">Add Property</a>
+        </li>
+
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/read']">Ballybane</a>
       </li>
@@ -57,12 +60,17 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/sale']">For Sale</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/allhomes']">All Homes</a>
+        </li>
     </ul>
     <span class="navbar-text white-text">
     Galway Houses for Rent and Sale
     </span>
   </div>
 </nav>
+
+
 
 
 

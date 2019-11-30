@@ -1,5 +1,15 @@
-<br>
-<br>
+<div class="jumbotron card card-image"
+    style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+    <div class="text-white text-center py-5 px-4">
+        <div>
+            <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong> Homes Available in Ballybane for Rent and
+                    Sale </strong></h2>
+
+
+        </div>
+    </div>
+</div>
+<br><br>
 
 <mat-accordion *ngFor="let home of Homes">
     <mat-expansion-panel [expanded]="true" *ngIf="home.area=='Ballybane'">
@@ -9,14 +19,14 @@
                 <h4> Available {{ home.rentsale }} </h4>
             </mat-panel-title>
             <mat-panel-title>
-               
+
                 <h4><b>Eircode: </b> {{ home.eircode }}</h4>
             </mat-panel-title>
             <mat-panel-title>
-        
+
                 <h4> <b>Address:</b> {{ home.address }} </h4>
             </mat-panel-title>
-        
+
 
         </mat-expansion-panel-header>
         <!-- <img src="{{home.poster}}">  -->
@@ -30,8 +40,8 @@
         <h4> <b>Price Per Month / Price for sale: </b> {{ home.cost }} </h4>
         <br>
         <div id="centerImage">
-        
-        <img src="{{home.houseimage}}">
+
+            <img src="{{home.houseimage}}">
         </div>
         <br>
         <h4> <b> </b> {{ home.description }} </h4>
@@ -39,8 +49,8 @@
         <mat-action-row>
             <button mat-button [routerLink]="['/edit', home._id]" color="primary">EDIT</button>
             <button mat-button (click)="onDelete(home._id)" color="warn">DELETE</button>
-        </mat-action-row> 
+        </mat-action-row>
 
     </mat-expansion-panel>
-  
+
 </mat-accordion>
