@@ -3,50 +3,54 @@
   <div class="text-white text-center py-5 px-4">
     <div>
       <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong> All Homes Available for Rent</strong></h2>
-     
-      
+
+
     </div>
   </div>
 </div>
 <mat-accordion *ngFor="let home of Homes">
-        <mat-expansion-panel [expanded]="true" *ngIf="home.rentsale=='For Rent'" > <!-- will display display all homes available for renting -->
-            <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h4> Available {{ home.rentsale }} </h4>
-                    </mat-panel-title>
-                    <mat-panel-title>
-                       
-                        <h4><b>Eircode: </b> {{ home.eircode }}</h4>
-                    </mat-panel-title>
-                    <mat-panel-title>
-                
-                        <h4> <b>Address:</b> {{ home.address }} </h4>
-                    </mat-panel-title>
-                
-        
-                </mat-expansion-panel-header>
-                <!-- <img src="{{home.poster}}">  -->
-                <p>Contact details:</p>
-                <h4> <b>Contact No:</b>{{ home.number }} </h4>
-                <br>
-                <h4> <b>Name: </b>{{ home.name }} </h4>
-                <br>
-                <h4> <b>E-mail: </b>:{{ home.email }} </h4>
-                <br>
-                <h4> <b>Price Per Month / Price for sale: </b> {{ home.cost }} </h4>
-                <br>
-                <div id="centerImage">
-                
-                <img src="{{home.houseimage}}">
-                </div>
-                <br>
-                <h4> <b> </b> {{ home.description }} </h4>
-                <br>
-                <mat-action-row>
-                    <button mat-button [routerLink]="['/edit', home._id]" color="primary">EDIT</button>
-                    <button mat-button (click)="onDelete(home._id)" color="warn">DELETE</button>
-                </mat-action-row> 
-        
-            </mat-expansion-panel>
-          
-        </mat-accordion>
+  <mat-expansion-panel [expanded]="true" *ngIf="home.rentsale=='For Rent'">
+    <!-- will display display all homes available for renting -->
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h4> Available {{ home.rentsale }} </h4>
+      </mat-panel-title>
+      <mat-panel-title>
+
+        <h4><b>Eircode: </b> {{ home.eircode }}</h4>
+      </mat-panel-title>
+      <mat-panel-title>
+
+        <h4> <b>Address:</b> {{ home.address }} </h4>
+      </mat-panel-title>
+
+
+    </mat-expansion-panel-header>
+    <!-- <img src="{{home.poster}}">  -->
+    <p>Contact details:</p>
+    <h4> <b>Contact No:</b>{{ home.number }} </h4>
+    <br>
+    <h4> <b>Name: </b>{{ home.name }} </h4>
+    <br>
+    <h4> <b>E-mail: </b>:{{ home.email }} </h4>
+    <br>
+    <h4 *ngIf="home.rentsale=='For Rent'"> Rent Per Month: {{ home.cost }} </h4>
+    <!-- if user selects rent,  the html element will display Rent Permonth-->
+    <h4 *ngIf="home.rentsale=='For Sale'"> Sale Cost: {{ home.cost }} </h4>
+    <!-- if user selects Sale,  the html element will display Sale Cost: -->
+    <br>
+    <div id="centerImage">
+
+      <img src="{{home.houseimage}}">
+    </div>
+    <br>
+    <h4> <b> </b> {{ home.description }} </h4>
+    <br>
+    <mat-action-row>
+      <button mat-button [routerLink]="['/edit', home._id]" color="primary">EDIT</button>
+      <button mat-button (click)="onDelete(home._id)" color="warn">DELETE</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+
+</mat-accordion>

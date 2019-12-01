@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HomeServiceService } from '../services/home-service.service';
 
 @Component({
@@ -19,10 +19,10 @@ export class NewcastleComponent implements OnInit {
     })
   }
 
-  onDelete(id:String){
-    console.log("Deleting movie with id: "+id);
+  onDelete(id: String) {
+    console.log("Deleting movie with id: " + id);
     this.homeService.DeleteHome(id).subscribe(
-      ()=>{
+      () => {
         this.ngOnInit();
       }
     );

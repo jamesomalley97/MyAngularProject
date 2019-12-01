@@ -1,76 +1,80 @@
+<mat-card id="card" style="text-align: center;">
+  <!-- radio button for selecting whether property is for rent or sale -->
+  <mat-radio-group [(ngModel)]="rentsale">
+    <!-- radio button was not working inside form -->
 
-  <mat-card id="card" style="text-align: center;">
-      <mat-radio-group [(ngModel)]="rentsale">
-    
-        <mat-label> <b><u> Select whether property is for Sale or Rent</u> </b> </mat-label>
-        <br>
-        <br>
-        <mat-radio-button value="For Rent">For Rent</mat-radio-button>
-        <br>
-        <br>
-        <mat-radio-button value="For Sale">For Sale</mat-radio-button>
-      </mat-radio-group>
+    <mat-label> <b><u> Select whether property is for Sale or Rent</u> </b> </mat-label>
+    <br>
+    <br>
+    <mat-radio-button value="For Rent">For Rent</mat-radio-button>
+    <br>
+    <br>
+    <mat-radio-button value="For Sale">For Sale</mat-radio-button>
+  </mat-radio-group>
+  <br>
+
+  <mat-card>
+    <form (submit)="onEditHome(homeForm)" #homeForm="ngForm">
+
       <br>
-    
-      <mat-card>
-        <form (submit)="onEditHome(homeForm)" #homeForm="ngForm">
-    
-          <br>
-    
-          <mat-form-field>
-            <mat-label>Select Area</mat-label>
-            <mat-select [(value)]="area" required>
-              <mat-option value="Ballybane">Ballybane</mat-option>
-              <mat-option value="Renmore">Renmore</mat-option>
-              <mat-option value="Ballybrit">ballybrit</mat-option>
-              <mat-option value="Newcastle">Newcastle</mat-option>
-              <mat-option value="Salthill">Salthill</mat-option>
-            </mat-select>
-          </mat-form-field>
-    
-          <mat-form-field>
-            <mat-label> Address </mat-label>
-            <input matInput type="text" name="address" ngModel={{home.address}} required #title="ngModel">
-          </mat-form-field>
-    
-          <mat-form-field>
-            <mat-label>Eircode</mat-label>
-            <textarea matInput name="eircode" ngModel={{home.eircode}} required #content="ngModel"></textarea>
-          </mat-form-field>
-    
-          <mat-form-field>
-            <mat-label>Rent Per Month / Price of House </mat-label>
-            <textarea matInput name="cost" ngModel={{home.cost}} required #content="ngModel"></textarea>
-          </mat-form-field>
-    
-          <mat-form-field>
-            <mat-label>Email</mat-label>
-    
-            <textarea matInput name="email" ngModel={{home.email}} required #content="ngModel"></textarea>
-          </mat-form-field>
-    
-          <mat-form-field>
-            <mat-label>Number</mat-label>
-            <textarea matInput name="number"   ngModel={{home.number}} required #content="ngModel"></textarea>
-          </mat-form-field>
-    
-          <mat-form-field>
-            <mat-label>Name</mat-label>
-            <textarea matInput name="name" ngModel={{home.name}} required #content="ngModel"></textarea>
-          </mat-form-field>
-    
-          <mat-form-field>
-            <label>Picture of house</label>
-            <textarea matInput rows="4" name="houseimage" ngModel={{home.houseimage}}  required #content="ngModel"></textarea>
-          </mat-form-field>
-    
-          <mat-form-field>
-            <label>House Description</label>
-            <textarea matInput rows="4" name="description" ngModel={{home.description}}  required #content="ngModel"></textarea>
-          </mat-form-field>
 
-          <div id="editbutton">
-          <button mat-raised-button color="accent" type="submit">Save</button>
-        </div>
-        </form>
-      </mat-card>
+      <mat-form-field>
+        <!-- drop down menu for selecting area -->
+        <mat-label>Select Area</mat-label>
+        <mat-select [(value)]="area" required>
+          <mat-option value="Ballybane">Ballybane</mat-option>
+          <mat-option value="Renmore">Renmore</mat-option>
+          <mat-option value="Ballybrit">ballybrit</mat-option>
+          <mat-option value="Newcastle">Newcastle</mat-option>
+          <mat-option value="Salthill">Salthill</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label> Address </mat-label>
+        <input matInput type="text" name="address" ngModel={{home.address}} required #title="ngModel">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Eircode</mat-label>
+        <textarea matInput name="eircode" ngModel={{home.eircode}} required #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Rent Per Month / Price of House </mat-label>
+        <textarea matInput name="cost" ngModel={{home.cost}} required #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+
+        <textarea matInput name="email" ngModel={{home.email}} required #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Number</mat-label>
+        <textarea matInput name="number" ngModel={{home.number}} required #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <textarea matInput name="name" ngModel={{home.name}} required #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <label>Picture of house</label>
+        <textarea matInput rows="4" name="houseimage" ngModel={{home.houseimage}} required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <label>House Description</label>
+        <textarea matInput rows="4" name="description" ngModel={{home.description}} required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <div id="editbutton">
+        <button mat-raised-button color="accent" type="submit">Save</button>
+      </div>
+    </form>
+  </mat-card>

@@ -36,7 +36,10 @@
         <br>
         <h4> <b>E-mail: </b>:{{ home.email }} </h4>
         <br>
-        <h4> <b>Price Per Month / Price for sale: </b> {{ home.cost }} </h4>
+        <h4 *ngIf="home.rentsale=='For Rent'"> Rent Per Month: {{ home.cost }} </h4>
+        <!-- if user selects rent,  the html element will display Rent Permonth-->
+        <h4 *ngIf="home.rentsale=='For Sale'"> Sale Cost: {{ home.cost }} </h4>
+        <!-- if user selects Sale,  the html element will display Sale Cost: -->
         <br>
         <div id="centerImage">
 

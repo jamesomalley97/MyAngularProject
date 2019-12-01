@@ -39,33 +39,31 @@ export class CreateComponent implements OnInit {
         (data) => {
           console.log(data);
 
-    //go to correct page of home added 
-    //adapted from https://angular.io/api/router/Router#navigateByUrl
-    //
-    if (this.area == "Ballybane") {
-      this.router.navigateByUrl("read")
-    }
-    else if (this.area == "Ballybrit") {
-      this.router.navigateByUrl("ballybrit")
+          //go to correct page of home added 
+          //adapted from https://angular.io/api/router/Router#navigateByUrl
+          //
+          if (this.area == "Ballybane") {
+            this.router.navigateByUrl("read")
+          }
+          else if (this.area == "Ballybrit") {
+            this.router.navigateByUrl("ballybrit")
 
-    } else if (this.area == "Renmore") {
-      this.router.navigateByUrl("renmore")
-    }
+          } else if (this.area == "Renmore") {
+            this.router.navigateByUrl("renmore")
+          }
 
-    else if (this.area == "Salthill") {
-      this.router.navigateByUrl("salthill")
-    }
+          else if (this.area == "Salthill") {
+            this.router.navigateByUrl("salthill")
+          }
 
-    else if (this.area == "Newcastle") {
-      this.router.navigateByUrl("newcastle")
-    }
+          else if (this.area == "Newcastle") {
+            this.router.navigateByUrl("newcastle")
+          }
         }
       );
     //clears all fields in form
     form.resetForm();
-    
 
-    
   }
 
 }
