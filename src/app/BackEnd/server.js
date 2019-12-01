@@ -12,6 +12,7 @@ const mongoose = require('mongoose');
 const mongoDB = "mongodb+srv://jamesomalley:Lecanvey1@cluster0-16fgy.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(mongoDB, {useNewUrlParser:true});
 const Schema = mongoose.Schema;
+// home objects to be stored in DB
 const homeSchema = new Schema({
   rentsale:String,
   area:String,
@@ -23,7 +24,7 @@ const homeSchema = new Schema({
   number: String,
   cost: String,
   description: String,
-  houseimage: String,
+  houseimage: String,  
 
 });
 const HomeModel = mongoose.model('home',homeSchema);
@@ -68,18 +69,10 @@ if(req.params.criteria == 'address')
 })
   }
 })
-//upload.single('houseImage')
+
+
 app.post('/api/homes',  (req,res) =>{
-//   console.log(req.file); // uploading image
-// console.log('post Sucessfull');
-// console.log(req.body)
-// console.log(req.body.rentsale);
-// console.log(req.body.address);
-// console.log(req.body.eircode);
-// console.log(req.body.name);
-// console.log(req.body.email);
-// console.log(req.body.number);
-// console.log(req.body.cost);
+
 
 HomeModel.create({
   rentsale:req.body.rentsale,

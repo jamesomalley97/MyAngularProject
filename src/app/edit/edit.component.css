@@ -2,3 +2,7 @@ mat-form-field,
 textarea {
   width: 100%;
 }
+
+#editbutton{
+  text-align: center;
+}

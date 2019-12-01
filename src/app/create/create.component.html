@@ -3,9 +3,8 @@
   <div class="text-white text-center py-5 px-4">
     <div>
       <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong> Add your house below.</strong></h2>
-      <p class="mx-5 mb-5"> Simply just fill in the information below   
+      <p class="mx-5 mb-5"> Simply just fill in the information below
       </p>
-      
     </div>
   </div>
 </div>
@@ -14,6 +13,7 @@
 
 <mat-card id="card" style="text-align: center;">
   <mat-radio-group [(ngModel)]="rentsale">
+    <!-- radio button select is outside of form because it was not working inside form -->
 
     <mat-label> <b><u> Select whether property is for Sale or Rent</u> </b> </mat-label>
     <br>
@@ -25,11 +25,11 @@
   </mat-radio-group>
 
   <form (submit)="onAddHomeInfo(homeForm)" #homeForm="ngForm">
+    <!-- all information passed into function will be added to database-->
 
     <br>
-
     <mat-form-field>
-      <mat-label>Select Area</mat-label>
+      <mat-label>Select Area</mat-label> <!-- Drop down menu select -->
       <mat-select [(value)]="area" required>
         <mat-option value="Ballybane">Ballybane</mat-option>
         <mat-option value="Renmore">Renmore</mat-option>
@@ -47,11 +47,14 @@
 
     <mat-form-field>
       <mat-label>Eircode</mat-label>
-      <textarea matInput name="eircode" ngModel required #content="ngModel"></textarea>
+      <textarea matInput name="eircode" ngModel required #content="ngModel"> </textarea>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Rent Per Month / Price of House </mat-label>
+      <mat-label *ngIf="rentsale=='For Sale'">Price of House</mat-label>
+      <!--  will display message depending on the value of rentsale in create component.ts -->
+      <mat-label *ngIf="rentsale=='For Rent'">Rent Per Month</mat-label>
+      <mat-label *ngIf="rentsale=='default'">Price</mat-label> <!-- text displayed before user makes a selection -->
       <textarea matInput name="cost" ngModel required #content="ngModel"></textarea>
     </mat-form-field>
 
@@ -81,10 +84,6 @@
       <textarea matInput rows="4" name="description" ngModel required #content="ngModel"></textarea>
     </mat-form-field>
 
-
-
-
-
-    <button mat-raised-button color="warn" type="submit">Save Home</button>
+    <button mat-raised-button color="warn" type="submit">Save Home</button> <!-- save form -->
   </form>
 </mat-card>

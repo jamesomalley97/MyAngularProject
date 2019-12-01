@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HomeServiceService } from '../services/home-service.service';
 
 @Component({
@@ -12,16 +12,16 @@ export class ReadComponent implements OnInit {
   constructor(private homeService: HomeServiceService) { }
 
   ngOnInit() {
-    this.homeService.GetHomeInfo().subscribe((data) => {
+    this.homeService.GetHomeInfo().subscribe((data) => { // gets home information from DB
       this.Homes = data.homes;
-      console.log(this.Homes);
+      console.log(this.Homes); // used for viewing in console 
     })
   }
 
-  onDelete(id:String){
-    console.log("Deleting movie with id: "+id);
+  onDelete(id: String) {   // will delete home from database
+    console.log("Deleting movie with id: " + id);
     this.homeService.DeleteHome(id).subscribe(
-      ()=>{
+      () => {
         this.ngOnInit();
       }
     );
@@ -29,4 +29,4 @@ export class ReadComponent implements OnInit {
 
 }
 
-  
+
